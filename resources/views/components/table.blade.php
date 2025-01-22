@@ -17,7 +17,7 @@
             @for ($i=0;$i<count($row);$i++)
                 @if ($i%2==0)
                 {
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <th scope="row" style="background-color: aqua;">
                         {{$row[$i]}}
                     </th>
                 }@else {
