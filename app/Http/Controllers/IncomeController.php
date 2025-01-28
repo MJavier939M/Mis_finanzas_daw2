@@ -22,6 +22,8 @@ class IncomeController extends Controller
             ]
 
         ]; 
+
+    
         //Aquí la lógica de negocio para el index
         return view('income.index',['title' => 'My incomes','tableData' => $tableData]);
         
