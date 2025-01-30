@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class IncomeController extends Controller
+class OutcomeController extends Controller
 {
-    /**
+      /**
      * Display a listing of the resource.
      */
     public function index()
 {
     $tableData = DB::table('users')->get();
 
-    $incomes = DB::table('incomes')->select('date', 'category', 'amount')->get();
+    $outcomes = DB::table('outcomes')->select('date', 'category', 'amount')->get();
 
-    return view('income.index', ['title' => 'My incomes', 'tableData' => $tableData,'incomes' => $incomes]);
+    return view('income.index', ['title' => 'My outcomes', 'tableData' => $tableData,'outcomes' => $outcomes]);
 }
 
     /**
@@ -24,7 +24,7 @@ class IncomeController extends Controller
     public function create()
     {
         //
-        return '<p>Esta es la página del create de incomes</p>';
+        return '<p>Esta es la página del create de outcomes</p>';
     }
 
     /**
@@ -41,7 +41,7 @@ class IncomeController extends Controller
     public function show(string $id)
     {
         //
-        return '<p>Esta es la página del show de incomes</p>';
+        return '<p>Esta es la página del show de outcomes</p>';
     }
 
     /**
@@ -50,7 +50,7 @@ class IncomeController extends Controller
     public function edit(string $id)
     {
         //
-        return '<p>Esta es la página del edit de incomes</p>';
+        return '<p>Esta es la página del edit de outcomes</p>';
     }
 
     /**
