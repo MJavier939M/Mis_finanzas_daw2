@@ -11,11 +11,17 @@ class IncomeController extends Controller
      */
     public function index()
 {
-    $tableData = DB::table('users')->get();
-
-    $incomes = DB::table('incomes')->select('date', 'category', 'amount')->get();
-
-    return view('income.index', ['title' => 'My incomes', 'tableData' => $tableData,'incomes' => $incomes]);
+    $incomes = Income::all(); 
+    $tabledata = [
+        "header" => ["date","category","amount"],
+        "datas" => $incomes -> map(function ($income){
+            return[
+            $income -> date,
+            $income -> category,
+            $income -> amount,
+            ];
+        })
+    ];
 }
 
     /**
